@@ -28,4 +28,13 @@ public interface CashCardRepository extends CrudRepository<CashCard, Long>,
    * @return a page of CashCards belonging to the specified owner
    */
   Page<CashCard> findByOwner(String owner, PageRequest request);
+
+  /**
+   * Checks if a CashCard with the given ID and owner exists.
+   *
+   * @param id    the ID of the CashCard
+   * @param owner the owner of the CashCard
+   * @return true if a CashCard with the given ID and owner exists, false otherwise
+   */
+  boolean existsByIdAndOwner(Long id, String owner);
 }
